@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+
+<table>
+  <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Color</th>
+  </thead>
+  <tbody>
+    <% cars.forEach(function(c) {%>
+    <tr>
+      <td>
+        <form
+          action="/cars/<%=c.id%>?_method=DELETE"
+          method="POST"
+          class="buttons">
+          <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+        </form>
+        <a href="/cars/<%=c.id%>/edit"
+          ><button type="submit">
+            <i class="fa-regular fa-pen-to-square"></i></button
+        ></a>
+      </td>
+
+      <td><%= c.name %></td>
+
+      <td><%= c.make %></td>
+
+      <td><%= c.model %></td>
+
+      <td><%= c.year %></td>
+
+      <td><%= c.color %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

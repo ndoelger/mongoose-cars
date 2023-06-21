@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<h3>Add a Car</h3>
+<form action="/cars" method="POST">
+  <label>Name: <input type="text" name="name" /> </label><br />
+  <label>Make: <input type="text" name="make" /> </label><br />
+  <label>Model: <input type="text" name="model" /> </label><br />
+  <label>Year: <input type="number" name="year" min="1950" max="2023" /> </label
+  ><br />
+  <label
+    >Color:
+    <select name="color">
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+      <option value="Silver">Silver</option>
+      <option value="Black">Black</option>
+      <option value="White">White</option>
+    </select> </label
+  ><br />
+  <button type="submit">Add Car</button>
+</form>
+
+<%- include('../partials/footer') %>

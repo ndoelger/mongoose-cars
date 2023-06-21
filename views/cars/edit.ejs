@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<!-- bring jquery CDN -->
+
+
+<h3>Edit Car</h3>
+<form action="/cars/<%= car.id %>?_method=PUT" method="POST">
+  <label>Name: <input type="text" name="name" value="<%= car.name %>"/> </label><br />
+  <label>Make: <input type="text" name="make" value="<%= car.make %>"/> </label><br />
+  <label>Model: <input type="text" name="model" value="<%= car.model %>" /> </label><br />
+  <label>Year: <input type="number" name="year" value="<%= car.year %>" min="1950" max="2023" /> </label
+  ><br />
+  <label
+    >Color:
+    <select name="color"  >
+      <option value="Red" <%= car.color === "Red" ? "selected" : "" %>>Red</option>
+      <option value="Blue" <%= car.color === "Blue" ? "selected" : "" %> >Blue</option>
+      <option value="Silver" <%= car.color === "Silver" ? "selected" : "" %>>Silver</option>
+      <option value="Black" <%= car.color === "Black" ? "selected" : "" %>>Black</option>
+      <option value="White" <%= car.color === "White" ? "selected" : "" %>>White</option>
+    </select> </label
+  ><br />
+  <button type="submit">Save Car</button>
+</form>
+
+<!-- script tag for jquery -->
+
+<%- include('../partials/footer') %>
